@@ -55,3 +55,23 @@ The app will be where the react app resides and the api is where the api server 
 
 - [Stage-0](stage-0.md)
 - [Stage-1](stage-1.md)
+- [Stage-2](stage-2.md)
+- [Stage-3](stage-3.md)
+- [Stage-4](stage-4.md)
+
+## Bonus
+
+> Use tachyons and animate.css to get creative with your look and feel for each app.
+
+To add both `tachyons` and `animate.css` to your project
+
+In the `app` folder run
+
+    yarn add tachyons animate.css
+
+In `app/src/index.js` add the following import statements
+
+``` js
+import 'tachyons'
+import 'animate.css'
+```
