@@ -4,25 +4,18 @@ Five in One is an exercise in which you will create basically 5 applications in 
 
 The practice application is divided up into stages.
 
-# Stage 0 - Setup and Routing
-# Stage 1 - List Api Methods
-# Stage 2 - Lists Components
-# Stage 3 - List Action Creators
-# Stage 4 - List Reducers/Store/Connect
-# Stage 5 - Form Components
-# Stage 6 - Add Action Creators
-# Stage 7 - GET API Methods
-# Stage 8 - Get Action Creators
-# Stage 9 - Get Reducers/Store/Connect
-# Stage 10 - Show Components
-# Stage 11 - Remove Button
-# Stage 12 - Remove Action Creators
-# Stage 13 - Remove API Handlers
-# Stage 14 - Remove Redirect
-# Stage 15 - Edit Button
-# Stage 16 - Refactor Form Component
-# Stage 17 - Update Action Creators
-# Stage 18 - PUT API Methods
+* [Stage 0 - Setup and Routing](stage-0.md)
+* [Stage 1 - List Api Methods](stage-1.md)
+* [Stage 2 - Lists Components](stage-2.md)
+* [Stage 3 - List Action Creators](stage-3.md)
+* [Stage 4 - List Reducers/Store/Connect](stage-4.md)
+* [Stage 5 - Form Components](stage-5.md)
+* [Stage 6 - Show Components](stage-6.md)
+* [Stage 7 - Remove Button](stage-7.md)
+* [Stage 8 - Edit Components](stage-8.md)
+* Stage 16 - Refactor Form Component
+* Stage 17 - Update Action Creators
+* Stage 18 - PUT API Methods
 
 ## Five Mini Apps
 
@@ -58,6 +51,9 @@ The app will be where the react app resides and the api is where the api server 
 - [Stage-2](stage-2.md)
 - [Stage-3](stage-3.md)
 - [Stage-4](stage-4.md)
+- [Stage-5](stage-5.md)
+- [Stage-6](stage-6.md)
+
 
 ## Bonus
 

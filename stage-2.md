@@ -12,25 +12,35 @@ src/pages/colors/index.js
 ``` js
 import React from 'react'
 import fetch from 'isomorphic-fetch'
-
-let colors
-
-// load colors
-fetch('http://localhost:5000/colors').then(res => res.json)
-  .then(colors => colors = colors)
+import { map } from 'ramda'
 
 const li = color => {
   return (
-    <li key={color.id} style={{color: color.value}}>{color.name}</li>
+    <li key={color.id} style={{ color: color.value }}>
+      {color.name}
+    </li>
   )
 }
 
-const Colors = props => {
-  return (
-    <div>
-      <ul>{map(li, colors)}</li>
-    </div>
-  )
+function Colors(props, context) {
+  const instance = new React.Component(props, context)
+  instance.state = {
+    colors: []
+  }
+
+  fetch('http://localhost:5000/colors')
+    .then(res => res.json())
+    .then(colors => instance.setState({ colors }))
+
+  instance.render = function() {
+    return (
+      <div>
+        <h1>Colors</h1>
+        <ul>{map(li, this.state.colors)}</ul>
+      </div>
+    )
+  }
+  return instance
 }
 
 export default Colors
