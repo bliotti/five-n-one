@@ -15,14 +15,14 @@ The practice application is divided up into stages.
 # Stage 8 - Get Action Creators
 # Stage 9 - Get Reducers/Store/Connect
 # Stage 10 - Show Components
-# Stage 1x - Remove Button
-# Stage 1x - Remove Action Creators
-# Stage 1x - Remove API Handlers
-# Stage 1x - Remove Redirect
-# Stage 1x - Edit Button
-# Stage 1x - Refactor Form Component
-# Stage 1x - Update Action Creators
-# Stage 1x - PUT API Methods
+# Stage 11 - Remove Button
+# Stage 12 - Remove Action Creators
+# Stage 13 - Remove API Handlers
+# Stage 14 - Remove Redirect
+# Stage 15 - Edit Button
+# Stage 16 - Refactor Form Component
+# Stage 17 - Update Action Creators
+# Stage 18 - PUT API Methods
 
 ## Five Mini Apps
 

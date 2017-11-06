@@ -83,6 +83,14 @@ You can use `the grind` channel to post a message.
 
 Confirm each domain by doing a visual test in a browser.
 
+## Commit Stage 1
+
+``` bash
+git add .
+git commit -am "completed stage-1"
+git push origin master
+```
+
 ## Completed
 
 Congrats - You have created a list endpoint for 5 domains.

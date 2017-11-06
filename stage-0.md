@@ -7,6 +7,8 @@ In this stage, we will be setting up the api and app projects and creating a sim
 ## Details
 
 ``` bash
+# create a new folder
+mkdir five-n-one
 npm install create-react-app yarn -g
 create-react-app app
 mkdir api
@@ -16,7 +18,7 @@ yarn init -y
 yarn add express body-parser cors
 # add utility modules
 yarn add ramda uuid
-# add domain modules 
+# add domain modules
 yarn add css-color-names buzzwords starwars-names fortune-cookie emojis-list
 yarn add nodemon --dev
 npm install json -g
@@ -128,6 +130,25 @@ In the app terminal, start the app.
     yarn start
 
 It should open a browser tab at http://localhost:3000 and you should see a list of links with the header Five In One
+
+### Commit Code to Github
+
+* create a new repo called five-n-one
+* commit this project to the new repo
+
+make sure you are in the five-n-one directory
+
+``` bash
+git init
+echo node_modules >> .gitignore
+git add .
+git commit -am "first commit"
+```
+
+grab your remote origin info from github
+
+* add your remote origin
+* push your commit to github 
 
 ---
 
