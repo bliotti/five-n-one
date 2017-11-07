@@ -61,26 +61,24 @@ class ShowColor extends React.Component {
   render() {
     const props = this.props
 
-    if (props.currentColor.id !== props.match.params.id) {
+    if (props.id !== props.match.params.id) {
       return (
         <h1>Loading Color...</h1>
       )
     }
 
     return (
-      <div className="vh-100" style={{backgroundColor: props.currentColor.value}}>
-        <h1>{props.currentColor.name}</h1>
-        <Link to={`/colors/:id/edit`}>Edit</Link>
-        <button onClick={props.removeColor}>Remove</Link>
+      <div className="vh-100" style={{backgroundColor: props.value}}>
+        <h1>{props.name}</h1>
+        <Link to={`/colors/${props.id}/edit`}>Edit</Link>
+        <button onClick={e => props.removeColor(props.id, props.history)}>Remove</button>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {
-    currentColor: state.currentColor
-  }
+  return state.currentColor
 }
 
 const mapActionsToProps = (dispatch) => {

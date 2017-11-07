@@ -13,9 +13,6 @@ The practice application is divided up into stages.
 * [Stage 6 - Show Components](stage-6.md)
 * [Stage 7 - Remove Button](stage-7.md)
 * [Stage 8 - Edit Components](stage-8.md)
-* Stage 16 - Refactor Form Component
-* Stage 17 - Update Action Creators
-* Stage 18 - PUT API Methods
 
 ## Five Mini Apps
 
@@ -53,7 +50,8 @@ The app will be where the react app resides and the api is where the api server 
 - [Stage-4](stage-4.md)
 - [Stage-5](stage-5.md)
 - [Stage-6](stage-6.md)
-
+- [Stage-7](stage-7.md)
+- [Stage-8](stage-8.md)
 
 ## Bonus
 
