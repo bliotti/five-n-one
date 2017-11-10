@@ -51,7 +51,7 @@ In `app/src/action-creators/colors.js` we need to add `updateColor`
 ``` js
 
 export const updateColor = (color, history) => async (dispatch, getState) => {
-  const result = await fetch(url, {
+  const result = await fetch(url + '/' + color.id, {
     headers: {
       'Content-Type': 'application/json'
     },
@@ -80,6 +80,22 @@ import EditColorForm from './pages/colors/edit-form'
 <Route path="/colors/:id/edit" component={EditColorForm} />
 ```
 
+## API add a PUT /colors/:id endpoint
+
+In `api/routers/colors.js`
+
+``` js
+
+app.put('/colors/:id', bodyParser.json(), (req, res) => {
+  if (!req.body) { 
+    return res.status(500).send({ok: false, message: 'Color Object Required'}) 
+  }
+  
+  colors = map(color => propEq('id', req.params.id, color) ? req.body : color, colors)
+  res.send({ok: true})
+})
+
+```
 
 ## Verify
 
