@@ -30,7 +30,10 @@ class EditColorForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => state.currentColor
+const mapStateToProps = state => ({
+  currentColor: state.currentColor
+})
+
 const mapActionsToProps = dispatch => {
   return {
     getColor: (id) => dispatch(getColor(id)),
