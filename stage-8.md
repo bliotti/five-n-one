@@ -38,7 +38,10 @@ const mapActionsToProps = dispatch => {
   return {
     getColor: (id) => dispatch(getColor(id)),
     onChange: (field, value) => dispatch(chgColor(field, value)),
-    onSubmit: (color, history) => dispatch(updateColor(color, history))
+    onSubmit: (color, history) => e => {
+      e.preventDefault() 
+      dispatch(updateColor(color, history))
+    }
   }
 }
 const connector = connect(mapStateToProps, mapActionsToProps)
