@@ -24,7 +24,14 @@ class EditColorForm extends React.Component {
     return (
       <div>
         <h1>Edit Color</h1>
-        <Form {...props} onSubmit={color => props.onSubmit(color, props.history)} />
+        <Form  
+          id={props.id}
+          name={props.currentColor.name}
+          value={props.currentColor.value}
+          cancelUrl={`/colors/${props.currentColor.id}`}
+          onSubmit={color => props.onSubmit(color, props.history)} 
+          onChange={props.onChange}
+        />
       </div>
     )
   }
