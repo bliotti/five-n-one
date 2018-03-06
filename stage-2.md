@@ -3,11 +3,11 @@
 We need to create some list components to list our
 items.
 
-* create a pages directory in the `app/src` directory
-* create a colors directory in the `pages` directory
-* create a `index.js` file in the `colors` directory
+* create a **pages** directory in the **app/src** directory
+* create a **colors** directory in the **pages** directory
+* create a **index.js** file in the **colors** directory
 
-src/pages/colors/index.js
+**src/pages/colors/index.js**
 
 ``` js
 import React from 'react'
@@ -47,7 +47,7 @@ class Colors extends React.Component {
 export default Colors
 ```
 
-src/App.js
+**src/App.js**
 
 ``` js
 // at the top section of the file
@@ -62,12 +62,14 @@ import Colors from './pages/colors'
 
 ## Verify
 
-Ok, make sure your api server is running and your app is running, then you should be able to go to the colors endpoint of localhost:3000/colors and it should show a list of all the css colors.
+Ok, make sure your api server is running and your app is running, then you should be able to go to the colors endpoint of `localhost:3000/colors` and it should show a list of all the css colors.
 
 ## Challenge
 
 Now implement the list component for the following domains following the same
-pattern as the tutorial above
+pattern as the tutorial above.  **!!DO NOT COPY AND PASTE CODE!!**  
+Instead, see how far you can get with your brain.  
+Peek when you need to but **!!DO NOT COPY AND PASTE CODE!!**
 
 * buzzwords
 * starwars
