@@ -4,10 +4,10 @@ In stage three we want to create action-creators for each domain, instead
 of creating one file of action-creators we will create a folder and
 break them out by domain.
 
-In the `src` directory create a new folder called `action-creators`
-In the `src/action-creators` folder create a new file called `colors.js`
+In the **src** directory create a new folder called **action-creators**
+In the **src/action-creators** folder create a new file called **colors.js**.
 
-In `colors.js`
+**colors.js**
 
 ``` js
 import fetch from 'isomorphic-fetch'
@@ -20,9 +20,9 @@ export const setColors = async (dispatch, getState) => {
 }
 ```
 
-In `src` directory create a new file called `constants.js`
+In **src** directory create a new file called **constants.js**.
 
-In `constants.js`
+**constants.js**
 
 ``` js
 export const SET_COLORS = 'SET_COLORS'
@@ -32,9 +32,9 @@ export const SET_COLORS = 'SET_COLORS'
 
 In order verify our action creator is working, we will write a test.
 
-In `src/action-creators` create a new file called `colors.test.js`
+In **src/action-creators** create a new file called **colors.test.js**
 
-In `src/action-creators/colors.test.js`
+**src/action-creators/colors.test.js**
 
 ``` js
 import { setColors } from './colors'
@@ -51,13 +51,16 @@ test('get and dispatch colors from the api server', () => {
 })
 ```
 
-We can run tests using the following command
+We can run tests using the following command:
 
 ``` bash
 CI=true yarn test
 ```
 
 ## Challenge
+
+
+** DO NOT COPY AND PASTE CODE !!**
 
 Create SET Action Creators for:
 
@@ -72,6 +75,6 @@ Also create tests for each one following the same pattern, this will help you ha
 
 ## Completed
 
-Congrats! [Insert some snazzy statement here!]
+Congrats! You're doing great!
 
 [Proceed to Stage 4](stage-4.md)
