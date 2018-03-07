@@ -10,13 +10,13 @@ and use the connect to map the redux state to our components props.
 
 ## Reducers
 
-In the `app/src` directory, create a new directory called `reducers`
+In the **app/src** directory, create a new directory called **reducers**.
 
-In the `reducers` directory, create a new file called `colors.js`
+In the **reducers** directory, create a new file called **colors.js**.
 
-In the `colors.js` file, lets add the following reducer for our list of colors.
+In the **colors.js** file, lets add the following reducer for our list of colors.
 
-src/reducers/colors.js
+**src/reducers/colors.js**
 
 ``` js
 import { SET_COLORS } from '../constants'
@@ -35,9 +35,9 @@ export const colors = (state=[], action) => {
 
 We need to create a redux store to manage our state
 
-In the `src` directory create a file called `store.js`
+In the **src** directory create a file called **store.js**.
 
-src/store.js
+**src/store.js**
 
 ``` js
 import { createStore, combineReducers, applyMiddleware } from 'redux'
@@ -58,7 +58,7 @@ export default createStore(
 Now that we created our redux store we need to attach the redux store
 to our app as a provider to let our app know when to render the app.
 
-In the `src` directory open the `index.js` file
+In the **src** directory open the **index.js** file
 
 ``` js
 import { Provider } from 'react-redux'
@@ -84,7 +84,7 @@ store.dispatch(setColors)
 
 To connect to our redux store, we need to use the connect higher order component to wrap around the component we want to connect to the store.
 
-In `src/pages/colors` open the `index.js` file
+In **src/pages/colors** open the **index.js** file
 
 Add the following code:
 
@@ -118,7 +118,9 @@ through your redux store.
 
 ## Challenge
 
-Now complete the same flow for the following domains:
+> DON'T COPY AND PASTE CODE!
+
+Now complete the same flow for the following domains. :
 
 * buzzwords
 * starwars
