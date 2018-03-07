@@ -20,13 +20,13 @@ Our api, will consist of 5 endpoints.
 
 ### Step 1 - Create a routes folder
 
-Navigate a terminal window to the api directory of the five-in-one repo. Lets create a new directory called `routes`.
+Navigate a terminal window to the api directory of the five-in-one repo. Lets create a new directory called **routes**.
 
-In the `routes` directory, we will create a new file called `colors.js`
+In the **routes** directory, we will create a new file called **colors.js**.
 
-Open the `colors.js` file in a text editor and we want to create a route handler for the list of color names.
+Open the **colors.js** file in a text editor and we want to create a route handler for the list of color names.
 
-api/routes/colors.js
+**api/routes/colors.js**
 
 ``` js
 const csscolorsObj = require('css-color-names')
@@ -45,7 +45,7 @@ module.exports = app => {
 }
 ```
 
-api/server.js
+**api/server.js**
 
 We need to add the routes to our server.
 
@@ -64,22 +64,25 @@ colorRoutes(app)
 
 Now that we have implemented the colors list route, we want to test.
 
-We can run the server and open a browser to the /colors router and hopefully see a list of color documents.
+We can run the server and open a browser to the `/colors` router and hopefully see a list of color documents.
 
-    # assuming you have a terminal in the root repo directory
-    cd api
-    yarn start
-    open http://localhost:5000/colors
+``` bash
+cd api
+yarn start
+```
+
+Use a browser to open http://localhost:5000/colors
 
 ## Challenge
 
-Now that we have walked through one of the list api routes, follow the same path to do the other four. You may run into interesting challenges with each
-list module, may have a different api, the goal is to create domain documents
-with each and they should have an id node, a name node, and maybe a value node.
+> DON'T COPY AND PASTE CODE.
+
+Now that we have walked through one of the list api routes, follow the same path to do the other four. You may run into interesting challenges with each list module, may have a different api, the goal is to create domain documents/json objects
+with each and they should have an `id` node, a `name` node, and optionally a `value` node.
 
 If you get stuck in any way, please post a question in slack so we can help.
 
-You can use `the grind` channel to post a message.
+You can use **the grind** channel to post a message.
 
 Confirm each domain by doing a visual test in a browser.
 
