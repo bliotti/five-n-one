@@ -66,10 +66,10 @@ Ok, make sure your api server is running and your app is running, then you shoul
 
 ## Challenge
 
-Now implement the list component for the following domains following the same
-pattern as the tutorial above.  **!!DO NOT COPY AND PASTE CODE!!**  
-Instead, see how far you can get with your brain.  
-Peek when you need to but **!!DO NOT COPY AND PASTE CODE!!**
+> **!!DO NOT COPY AND PASTE CODE!!**  
+
+Now implement the list component for the following domains following the same pattern as the tutorial above.  
+Instead, see how far you can get with your brain. Peek when you need to but don't copy and paste code. 
 
 * buzzwords
 * starwars
