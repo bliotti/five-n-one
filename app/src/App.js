@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
+import Colors from "./pages/colors"
 
 const Menu = props => {
   return (
@@ -32,6 +33,7 @@ const App = props => {
       <div>
         <Switch>
           <Route exact path="/" component={Menu} />
+          <Route exact path="/colors" component={Colors} />
         </Switch>
       </div>
     </BrowserRouter>
