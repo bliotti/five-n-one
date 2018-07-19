@@ -1,15 +1,15 @@
-import React from "react"
-import fetch from "isomorphic-fetch"
-import { map } from "ramda"
-import Component from "@reactions/component"
+import React from "react";
+import fetch from "isomorphic-fetch";
+import { map } from "ramda";
+import Component from "@reactions/component";
 
 const li = color => {
   return (
     <li key={color.id} style={{ color: color.value }}>
       {color.name}
     </li>
-  )
-}
+  );
+};
 
 const Colors = props => {
   return (
@@ -18,7 +18,7 @@ const Colors = props => {
       didMount={({ state, setState }) => {
         fetch("http://localhost:5000/colors")
           .then(res => res.json())
-          .then(colors => setState({ colors }))
+          .then(colors => setState({ colors }));
       }}
     >
       {({ state, setState }) => (
@@ -28,8 +28,8 @@ const Colors = props => {
         </div>
       )}
     </Component>
-  )
-}
+  );
+};
 
 // class Colors extends React.Component {
 //     constructor() {
@@ -53,4 +53,4 @@ const Colors = props => {
 //     }
 // }
 
-export default Colors
+export default Colors;

@@ -1,16 +1,16 @@
-import React from 'react'
-import uuid from 'uuid'
-import { map } from 'ramda'
-import Component from '@reactions/component'
-import { link } from 'fs'
+import React from "react";
+import uuid from "uuid";
+import { map } from "ramda";
+import Component from "@reactions/component";
+import { link } from "fs";
 
-const li = cookie => <li key={uuid.v4()}>{cookie}</li>
+const li = cookie => <li key={cookie.id}>{cookie.name}</li>;
 
 const Cookies = props => (
   <Component
     initialState={{ cookies: [] }}
     didMount={({ state, setState }) =>
-      fetch('http://localhost:5000/cookies')
+      fetch("http://localhost:5000/cookies")
         .then(res => res.json())
         .then(cookies => setState({ cookies }))
     }
@@ -22,6 +22,6 @@ const Cookies = props => (
       </div>
     )}
   </Component>
-)
+);
 
-export default Cookies
+export default Cookies;
