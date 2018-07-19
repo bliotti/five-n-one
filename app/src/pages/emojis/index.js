@@ -1,26 +1,16 @@
-import React from "react";
-import fetch from "isomorphic-fetch";
-import Component from "@reactions/component";
-import { map } from "ramda";
-import uuid from "uuid";
+import React from 'react'
+import { map } from 'ramda'
+import { connect } from 'react-redux'
 
-const li = emoji => <li key={emoji.id}>{emoji.name}</li>;
+const li = emoji => <li key={emoji.id}>{emoji.name}</li>
 
 const Emojis = props => (
-  <Component
-    initialState={{ emojis: [] }}
-    didMount={({ state, setState }) =>
-      fetch("http://localhost:5000/emojis")
-        .then(res => res.json())
-        .then(emojis => setState({ emojis }))
-    }
-  >
-    {({ state, setState }) => (
-      <div>
-        <ul>{map(li, state.emojis)}</ul>
-      </div>
-    )}
-  </Component>
-);
+  <div>
+    <ul>{map(li, props.emojis)}</ul>
+  </div>
+)
 
-export default Emojis;
+const mapStateToProps = state => ({
+  emojis: state.emojis
+})
+export default connect(mapStateToProps)(Emojis)
