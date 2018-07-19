@@ -3,7 +3,6 @@ import fetch from 'isomorphic-fetch'
 import Component from '@reactions/component'
 import { map } from 'ramda'
 import uuid from 'uuid'
-import { link } from 'fs'
 
 const li = emoji => <li key={uuid.v4()}>{emoji}</li>
 
