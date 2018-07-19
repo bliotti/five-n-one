@@ -1,6 +1,10 @@
-import React from "react"
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
-import Colors from "./pages/colors"
+import React from 'react'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import Colors from './pages/colors'
+import StarWars from './pages/starwars'
+import BuzzWords from './pages/buzzwords'
+import Cookies from './pages/fortune-cookies'
+import Emojis from './pages/emojis'
 
 const Menu = props => {
   return (
@@ -17,7 +21,7 @@ const Menu = props => {
           <Link to="/starwars">Star Wars Names</Link>
         </li>
         <li>
-          <Link to="/fortune-cookies">Fortune Cookies</Link>
+          <Link to="/cookies">Fortune Cookies</Link>
         </li>
         <li>
           <Link to="/emojis">Emojis</Link>
@@ -34,6 +38,10 @@ const App = props => {
         <Switch>
           <Route exact path="/" component={Menu} />
           <Route exact path="/colors" component={Colors} />
+          <Route exact path="/starwars" component={StarWars} />
+          <Route exact path="/buzzwords" component={BuzzWords} />
+          <Route exact path="/cookies" component={Cookies} />
+          <Route exact path="/emojis" component={Emojis} />
         </Switch>
       </div>
     </BrowserRouter>
