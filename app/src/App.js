@@ -1,11 +1,12 @@
-import React from "react"
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
-import Colors from "./pages/colors"
-import StarWars from "./pages/starwars"
-import BuzzWords from "./pages/buzzwords"
-import Cookies from "./pages/fortune-cookies"
-import Emojis from "./pages/emojis"
-import ColorForm from "./pages/colors/form"
+import React from 'react'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import Colors from './pages/colors'
+import ColorForm from './pages/colors/form'
+import StarWars from './pages/starwars'
+import BuzzWords from './pages/buzzwords'
+import BuzzwordsForm from './pages/buzzwords/form'
+import Cookies from './pages/fortune-cookies'
+import Emojis from './pages/emojis'
 
 const Menu = props => {
   return (
@@ -42,6 +43,7 @@ const App = props => {
           <Route exact path="/colors/new" component={ColorForm} />
           <Route exact path="/starwars" component={StarWars} />
           <Route exact path="/buzzwords" component={BuzzWords} />
+          <Route exact path="/buzzwords/new" component={BuzzwordsForm} />
           <Route exact path="/cookies" component={Cookies} />
           <Route exact path="/emojis" component={Emojis} />
         </Switch>

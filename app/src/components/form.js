@@ -1,15 +1,15 @@
-import React from "react"
+import React from 'react'
 // import { Link } from "react-router-dom"
 // import uuid from "uuid"
-import { withRouter } from "react-router"
+import { withRouter } from 'react-router'
 
 //
 const Form = ({
   history,
   cancelURL,
-  id = "",
-  name = "",
-  value = "",
+  id = '',
+  name = '',
+  value = '',
   onChange,
   onSubmit,
   isColor
@@ -18,11 +18,11 @@ const Form = ({
     <form
       onSubmit={e => {
         e.preventDefault()
-        if (name === "" || value === "") {
-          alert("Empty Fields")
-          return
+        if (name === '') alert('Empty Fields')
+        else if (value === '' && isColor) alert('Empty Field')
+        else {
+          onSubmit({ id, name, value })
         }
-        onSubmit({ id, name, value })
       }}
     >
       {/* <div>
@@ -36,7 +36,7 @@ const Form = ({
       <div>
         <input
           type="text"
-          onChange={e => onChange("name", e.target.value)}
+          onChange={e => onChange('name', e.target.value)}
           value={name}
         />
       </div>
@@ -49,7 +49,7 @@ const Form = ({
             <div>
               <input
                 type="text"
-                onChange={e => onChange("value", e.target.value)}
+                onChange={e => onChange('value', e.target.value)}
                 value={value}
               />
             </div>
