@@ -2,7 +2,9 @@ import fetch from 'isomorphic-fetch'
 import {
   SET_COLORS,
   CHG_CURRENT_COLOR,
-  RESET_NEW_COLOR_FORM
+  RESET_NEW_COLOR_FORM,
+  IS_FETCHING,
+  DONE_FETCHING
 } from '../constants'
 
 const url = 'http://localhost:5000/colors'
@@ -17,9 +19,13 @@ export const addColor = (color, history) => async (dispatch, getState) => {
   const method = 'POST'
   const body = JSON.stringify(color)
 
+  dispatch({ type: IS_FETCHING })
+
   const result = await fetch(url, { headers, method, body })
     .then(res => res.json())
     .catch(err => console.log(err))
+
+  dispatch({ type: DONE_FETCHING })
 
   if (result.ok) {
     dispatch(setColors)
@@ -27,7 +33,6 @@ export const addColor = (color, history) => async (dispatch, getState) => {
     history.push('/colors')
   } else {
     alert(result.msg)
-    history.push('/colors')
   }
 }
 

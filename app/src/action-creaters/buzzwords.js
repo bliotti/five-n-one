@@ -1,5 +1,10 @@
 import fetch from 'isomorphic-fetch'
-import { SET_BUZZWORDS, RESET_NEW_BUZZWORD_FORM } from '../constants'
+import {
+  SET_BUZZWORDS,
+  RESET_NEW_BUZZWORD_FORM,
+  IS_FETCHING,
+  DONE_FETCHING
+} from '../constants'
 const url = 'http://localhost:5000/buzzwords'
 
 export const setBuzzWords = async (dispatch, getState) => {
@@ -11,17 +16,19 @@ export const addBuzzword = (history, buzzword) => async (
   dispatch,
   getState
 ) => {
-  console.log(buzzword)
   const headers = { 'Content-Type': 'application/json' }
   const method = 'POST'
   const body = JSON.stringify(buzzword)
 
+  dispatch({ type: IS_FETCHING })
+
   const result = await fetch(url, { headers, method, body })
     .then(res => {
-      console.log(res.body)
       return res.json()
     })
     .catch(err => console.log(err))
+
+  dispatch({ type: DONE_FETCHING })
 
   if (result.ok) {
     dispatch(setBuzzWords)
@@ -29,6 +36,5 @@ export const addBuzzword = (history, buzzword) => async (
     history.push('/buzzwords')
   } else {
     alert(result.msg)
-    history.push('/buzzwords')
   }
 }

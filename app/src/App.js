@@ -7,6 +7,7 @@ import BuzzWords from './pages/buzzwords'
 import BuzzwordsForm from './pages/buzzwords/form'
 import Cookies from './pages/fortune-cookies'
 import Emojis from './pages/emojis'
+import EmojiForm from './pages/emojis/form'
 
 const Menu = props => {
   return (
@@ -46,6 +47,7 @@ const App = props => {
           <Route exact path="/buzzwords/new" component={BuzzwordsForm} />
           <Route exact path="/cookies" component={Cookies} />
           <Route exact path="/emojis" component={Emojis} />
+          <Route exact path="/emojis/new" component={EmojiForm} />
         </Switch>
       </div>
     </BrowserRouter>
