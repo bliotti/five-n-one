@@ -3,12 +3,14 @@ import thunk from 'redux-thunk'
 import { isFetching } from './reducers/loading'
 import { colors, currentColor } from './reducers/colors'
 import { buzzwords, currentBuzzword } from './reducers/buzzwords'
-import { starwars } from './reducers/starwars'
-import { cookies } from './reducers/cookies'
+import { starwars, currentStarwars } from './reducers/starwars'
+import { cookies, currentCookie } from './reducers/cookies'
 import { emojis, currentEmoji } from './reducers/emojis'
 
 export default createStore(
   combineReducers({
+    currentStarwars,
+    currentCookie,
     isFetching,
     colors,
     currentColor,
