@@ -1,15 +1,16 @@
-import React from 'react'
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
-import Colors from './pages/colors'
-import ColorForm from './pages/colors/form'
-import StarWars from './pages/starwars'
-import BuzzWords from './pages/buzzwords'
-import BuzzwordsForm from './pages/buzzwords/form'
-import Cookies from './pages/fortune-cookies'
-import Emojis from './pages/emojis'
-import EmojiForm from './pages/emojis/form'
-import CookieForm from './pages/fortune-cookies/form'
-import StarwarsForm from './pages/starwars/form'
+import React from "react";
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import Colors from "./pages/colors";
+import ShowColor from "./pages/colors/show";
+import ColorForm from "./pages/colors/form";
+import StarWars from "./pages/starwars";
+import BuzzWords from "./pages/buzzwords";
+import BuzzwordsForm from "./pages/buzzwords/form";
+import Cookies from "./pages/fortune-cookies";
+import Emojis from "./pages/emojis";
+import EmojiForm from "./pages/emojis/form";
+import CookieForm from "./pages/fortune-cookies/form";
+import StarwarsForm from "./pages/starwars/form";
 
 const Menu = props => {
   return (
@@ -33,8 +34,8 @@ const Menu = props => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 const App = props => {
   return (
@@ -44,6 +45,7 @@ const App = props => {
           <Route exact path="/" component={Menu} />
           <Route exact path="/colors" component={Colors} />
           <Route exact path="/colors/new" component={ColorForm} />
+          <Route exact path="/colors/:id" component={ShowColor} />
           <Route exact path="/starwars" component={StarWars} />
           <Route exact path="/starwars/new" component={StarwarsForm} />
           <Route exact path="/buzzwords" component={BuzzWords} />
@@ -55,7 +57,7 @@ const App = props => {
         </Switch>
       </div>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
