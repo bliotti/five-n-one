@@ -1,9 +1,13 @@
-import React from 'react'
-import { map } from 'ramda'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { map } from "ramda";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-const li = emoji => <li key={emoji.id}>{emoji.name}</li>
+const li = emoji => (
+  <li key={emoji.id}>
+    <Link to={`/emojis/${emoji.id}`}>{emoji.name}</Link>
+  </li>
+);
 
 const Emojis = props => (
   <div>
@@ -11,9 +15,9 @@ const Emojis = props => (
     <Link to="/emojis/new">Add a New Emoji</Link>
     <ul>{map(li, props.emojis)}</ul>
   </div>
-)
+);
 
 const mapStateToProps = state => ({
   emojis: state.emojis
-})
-export default connect(mapStateToProps)(Emojis)
+});
+export default connect(mapStateToProps)(Emojis);

@@ -1,9 +1,13 @@
-import React from 'react'
-import { map } from 'ramda'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { map } from "ramda";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-const li = buzzword => <li key={buzzword.id}>{buzzword.name}</li>
+const li = buzzword => (
+  <Link to={`/buzzwords/${buzzword.id}`}>
+    <li key={buzzword.id}>{buzzword.name}</li>
+  </Link>
+);
 
 const BuzzWords = props => (
   <div>
@@ -11,10 +15,10 @@ const BuzzWords = props => (
     <Link to="/buzzwords/new">Add Buzzword</Link>
     <ul>{map(li, props.buzzwords)}</ul>
   </div>
-)
+);
 
 const mapStateToProps = state => {
-  return { buzzwords: state.buzzwords }
-}
+  return { buzzwords: state.buzzwords };
+};
 
-export default connect(mapStateToProps)(BuzzWords)
+export default connect(mapStateToProps)(BuzzWords);

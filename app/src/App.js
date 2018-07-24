@@ -5,9 +5,12 @@ import ShowColor from "./pages/colors/show";
 import ColorForm from "./pages/colors/form";
 import StarWars from "./pages/starwars";
 import BuzzWords from "./pages/buzzwords";
+import ShowBuzzword from "./pages/buzzwords/show";
 import BuzzwordsForm from "./pages/buzzwords/form";
 import Cookies from "./pages/fortune-cookies";
+import ShowCookie from "./pages/fortune-cookies/show";
 import Emojis from "./pages/emojis";
+import ShowEmoji from "./pages/emojis/show";
 import EmojiForm from "./pages/emojis/form";
 import CookieForm from "./pages/fortune-cookies/form";
 import StarwarsForm from "./pages/starwars/form";
@@ -50,9 +53,12 @@ const App = props => {
           <Route exact path="/starwars/new" component={StarwarsForm} />
           <Route exact path="/buzzwords" component={BuzzWords} />
           <Route exact path="/buzzwords/new" component={BuzzwordsForm} />
+          <Route exact path="/buzzwords/:id" component={ShowBuzzword} />
           <Route exact path="/cookies" component={Cookies} />
+          <Route exact path="/cookies/:id" component={ShowCookie} />
           <Route exact path="/cookies/new" component={CookieForm} />
           <Route exact path="/emojis" component={Emojis} />
+          <Route exact path="/emojis/:id" component={ShowEmoji} />
           <Route exact path="/emojis/new" component={EmojiForm} />
         </Switch>
       </div>

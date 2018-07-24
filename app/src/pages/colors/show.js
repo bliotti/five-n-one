@@ -5,13 +5,19 @@ import { connect } from "react-redux";
 import Component from "@reactions/component";
 
 const ShowColor = props => (
-  <Component didMount={() => getColor(props.match.params.id)}>
+  <Component didMount={() => props.getColor(props.match.params.id)}>
     {() =>
-      props.id === props.match.params.id ? (
-        <div style={{ backgroundColor: props.value }}>
-          <h1>{props.name}</h1>
-          <Link to={`/colors/${props.id}/edit`}>Edit</Link>
-          <button onClick={e => props.removeColor(props.id, props.history)}>
+      props.currentColor.id === props.match.params.id ? (
+        <div style={{ backgroundColor: props.currentColor.value }}>
+          <h1>{props.currentColor.name}</h1>
+          <Link to={`/colors/${props.currentColor.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+          <button
+            onClick={e =>
+              props.removeColor(props.currentColor.id, props.history)
+            }
+          >
             Remove
           </button>
         </div>
@@ -24,9 +30,10 @@ const ShowColor = props => (
 
 const mapStateToProps = state => {
   return {
-    id: state.currentColor.id,
-    name: state.currentColor.name,
-    value: state.currentColor.value
+    currentColor: state.currentColor
+    //  id: state.currentColor.id,
+    //name: state.currentColor.name,
+    //value: state.currentColor.value
   };
 };
 

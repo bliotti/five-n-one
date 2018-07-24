@@ -1,14 +1,5 @@
 const csscolorsObj = require("css-color-names");
-const {
-  map,
-  keys,
-  prop,
-  append,
-  isNil,
-  sort,
-  ascend,
-  filter
-} = require("ramda");
+const { map, keys, prop, append, isNil, sort, ascend, find } = require("ramda");
 const uuid = require("uuid");
 const bodyParser = require("body-parser");
 
@@ -42,8 +33,7 @@ module.exports = app => {
     }
   });
   app.get("/colors/:id", (req, res) => {
-    const foundColor = filter(c => c.id === req.params.id, colors);
-    alert(JSON.stringify(req.params.id));
+    const foundColor = find(c => c.id === req.params.id, colors);
     res.send(foundColor);
   });
 };

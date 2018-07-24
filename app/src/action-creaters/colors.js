@@ -41,7 +41,6 @@ export const chgColor = (field, value) => (dispatch, getState) => {
 };
 
 export const getColor = id => async (dispatch, getState) => {
-  const color = await fetch(url + `/` + id).then(res => res.json());
-  alert(JSON.stringify(color));
+  const color = await fetch(url + "/" + id).then(res => res.json());
   dispatch({ type: CHG_CURRENT_COLOR, payload: color });
 };
