@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { getColor } from "../../action-creaters/colors";
-import { connect } from "react-redux";
-import Component from "@reactions/component";
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import Component from '@reactions/component'
+import { getColor, removeColor } from '../../action-creaters/colors'
 
 const ShowColor = props => (
   <Component didMount={() => props.getColor(props.match.params.id)}>
@@ -26,25 +26,25 @@ const ShowColor = props => (
       )
     }
   </Component>
-);
+)
 
 const mapStateToProps = state => {
   return {
     currentColor: state.currentColor
-    //  id: state.currentColor.id,
-    //name: state.currentColor.name,
-    //value: state.currentColor.value
-  };
-};
+  }
+}
 
 const mapActionToProps = dispatch => {
   return {
     getColor: id => dispatch(getColor(id)),
-    removeColor: () => null
-  };
-};
+    removeColor: (id, history) =>
+      window.confirm('Are you sure you want to delete?')
+        ? dispatch(removeColor(id, history))
+        : null
+  }
+}
 
 export default connect(
   mapStateToProps,
   mapActionToProps
-)(ShowColor);
+)(ShowColor)
