@@ -14,6 +14,7 @@ import ShowEmoji from "./pages/emojis/show";
 import EmojiForm from "./pages/emojis/form";
 import CookieForm from "./pages/fortune-cookies/form";
 import StarwarsForm from "./pages/starwars/form";
+import ShowStarwars from "./pages/starwars/show";
 
 const Menu = props => {
   return (
@@ -50,6 +51,7 @@ const App = props => {
           <Route exact path="/colors/new" component={ColorForm} />
           <Route exact path="/colors/:id" component={ShowColor} />
           <Route exact path="/starwars" component={StarWars} />
+          <Route exact path="/starwars/:id" component={ShowStarwars} />
           <Route exact path="/starwars/new" component={StarwarsForm} />
           <Route exact path="/buzzwords" component={BuzzWords} />
           <Route exact path="/buzzwords/new" component={BuzzwordsForm} />

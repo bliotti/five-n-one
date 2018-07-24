@@ -8,7 +8,9 @@ const {
   append,
   ascend,
   prop,
-  sort
+  sort,
+  propEq,
+  find
 } = require('ramda')
 const uuid = require('uuid')
 const bodyParser = require('body-parser')
@@ -40,5 +42,8 @@ module.exports = app => {
       append(newSWChar)
     )(swChars)
     res.status(201).send({ ok: true })
+  })
+  app.get('/starwars/:id', (req, res) => {
+    res.status(200).send(find(propEq('id', req.params.id), swChars))
   })
 }

@@ -2,7 +2,8 @@ import {
   SET_STARWARS,
   IS_FETCHING,
   DONE_FETCHING,
-  RESET_NEW_STARWARS_FORM
+  RESET_NEW_STARWARS_FORM,
+  CHG_CURRENT_STARWARS
 } from '../constants'
 import fetch from 'isomorphic-fetch'
 
@@ -35,4 +36,10 @@ export const addStarwars = (history, starwars) => async (
   } else {
     alert(result.msg)
   }
+}
+
+export const getStarwars = id => async (dispatch, getState) => {
+  const result = await fetch(url + '/' + id)
+  const swChar = await result.json()
+  dispatch({ type: CHG_CURRENT_STARWARS, payload: swChar })
 }

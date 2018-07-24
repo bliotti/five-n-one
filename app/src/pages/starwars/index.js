@@ -1,9 +1,13 @@
-import React from 'react'
-import { map } from 'ramda'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { map } from "ramda";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-const li = sw => <li key={sw.id}>{sw.name}</li>
+const li = sw => (
+  <li key={sw.id}>
+    <Link to={`/starwars/${sw.id}`}>{sw.name}</Link>
+  </li>
+);
 
 const StarWars = props => (
   <div>
@@ -15,10 +19,10 @@ const StarWars = props => (
     <Link to="/starwars/new">Add a new starwars character</Link>
     <ul>{map(li, props.swNames)}</ul>
   </div>
-)
+);
 
 const mapStateToProps = state => {
-  return { swNames: state.starwars }
-}
+  return { swNames: state.starwars };
+};
 
-export default connect(mapStateToProps)(StarWars)
+export default connect(mapStateToProps)(StarWars);
